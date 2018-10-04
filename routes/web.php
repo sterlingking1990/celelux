@@ -23,13 +23,17 @@ Route::get('/fans/signupmessage','FansController@showsignupmessage');
 
 Route::get('/fans/verifysignup','FansController@showauthpage');
 
-Route::get('/fans/page/{fan}','FansController@showfanpage');
+Route::get('/fans/page','FansController@showfanpage');
 
 Route::get('/fans/page/{fan}/{name_of_celeb}/celebcollections','FansController@showcelebcollections');
 
 Route::get('/fans/page/{fan}/{name_of_celeb}/{item}/bidroom','FansController@showitembidroom');
 
 Route::get('/fans/page/{fan}/settings','FansController@showfansettings');
+
+//Functions for processing
+Route::post('/fans/processsignin','FansController@processsignin');
+Route::post('/fans/processsignup','FansController@processsignup');
 
 
 //Celebrities Route Defined
@@ -41,6 +45,8 @@ Route::get('/celeb/{name_of_celeb}/livebids','CelebController@showlivebids');
 Route::get('/celeb/{name_of_celeb}/uploadluxury','CelebController@uploadluxuryform');
 
 Route::get('/celeb/{name_of_celeb}/fananalytics','CelebController@showfananalytics');
+
+
 
 
 

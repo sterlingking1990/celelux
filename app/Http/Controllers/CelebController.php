@@ -13,15 +13,30 @@ class CelebController extends Controller
 
 	public function showcelebindex(){
 		return view('celeb.celebindex'); 
+
+		/*
+			show index page
+		**/
 	}
 
 	public function showcelebsignin(){
 		return view('celeb.signinpage');
+
+		/*
+		1. show sign in page for celeb
+
+		**/
 	}
 
 	public function showuploads($celeb_id){
 		
 		return view('celeb.showuploads',compact('celeb_id'));
+
+		/*
+			1. show the uploads done by celeb_id with the status of the uploads
+			2. display on view with buttons on relevant information based on status
+
+		**/
 	}
 
 	public function showlivebids($celeb_id){
@@ -29,6 +44,8 @@ class CelebController extends Controller
 		/*
 
 			1. show live bids concerning the celeb_id
+			2. this is shown from only the table celeb_luxury_bidtb which is joined with celeb_luxurytb to show live bids concerning celeb_id
+			3.also joined with fan_signuptb to show the details of the fans doing the live bids
 		**/
 
 
@@ -39,7 +56,7 @@ class CelebController extends Controller
 		return view('celeb.showuploadform',compact('celeb_id'));
 
 		/*
-			show form for upload, then the request will save in celeb_luxurytb with the id; celeb_id
+			show form for upload, then the request input will save in celeb_luxurytb with the id; celeb_id
 		**/
 
 	}
